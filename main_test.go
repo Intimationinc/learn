@@ -10,13 +10,10 @@ import (
 
 func TestPingEndpoint(t *testing.T) {
 	router := SetupRouter()
-
 	req, err := http.NewRequest(http.MethodGet, "/ping", nil)
 	if err != nil {
 		t.Fatalf("Could not create request: %v", err)
 	}
-
-	//will check here
 
 	recorder := httptest.NewRecorder()
 	router.ServeHTTP(recorder, req)
