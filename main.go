@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,5 +19,7 @@ func SetupRouter() *gin.Engine {
 
 func main() {
 	r := SetupRouter()
-	r.Run()
+	if err := r.Run(); err != nil {
+		log.Fatalf("Server failed to start: %v", err)
+	}
 }
