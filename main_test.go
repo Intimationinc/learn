@@ -16,6 +16,8 @@ func TestPingEndpoint(t *testing.T) {
 		t.Fatalf("Could not create request: %v", err)
 	}
 
+	//will check here
+
 	recorder := httptest.NewRecorder()
 	router.ServeHTTP(recorder, req)
 	assert.Equal(t, http.StatusOK, recorder.Code)
